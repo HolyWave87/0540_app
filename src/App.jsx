@@ -5,13 +5,10 @@ import Profile from "./Profile";
 import Messages from "./Messages";
 import Settings from "./Settings";
 
-
-
-
 function App(props) {
-
+	//console.log(props);
 	return (
-		<div className="container-fluid">
+		<div className="container-fluid mt-5">
 			<div className="row">
 				<div className="col-sm-3">
 					<div className="nav flex-column nav-pills" aria-orientation="vertical">
@@ -34,7 +31,7 @@ function App(props) {
 						<Route path="/profile" element={<Profile function={props.function.key_getUser} />} />
 						<Route path="/messages" element={<Messages />} />
 						<Route path="/settings" element={<Settings />} />
-						<Route path="/friends" element={<Friends />} />
+						<Route path="/friends" element={<Friends function={props.function.key_getUsers} />} />
 					</Routes>
 				</div>
 			</div>
